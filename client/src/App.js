@@ -12,8 +12,6 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/dashboard" component={Dashboard} />
-        {/* PROBLEME POUR RECUPERER L'ID DE L'ARTICLE = UNDEFINED 
-        JE PENSE QUE C'EST L'API QUI BLOQUE L'ACCES */}
         <Route exact path="/article/:id" component={Article} />
       </Switch>
     </div>
