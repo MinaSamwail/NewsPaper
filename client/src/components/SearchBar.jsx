@@ -20,12 +20,12 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    // return (
-    //   <form>
-    //     <input className="searchbar" type="text" placeholder="Research..." />
-    //     {/* <input className="search-btn" type="submit" value="Search" /> */}
-    //   </form>
-    // );
+    return (
+      <form>
+        <input className="searchbar" type="text" placeholder="Research..." />
+        {/* <input className="search-btn" type="submit" value="Search" /> */}
+      </form>
+    );
   }
 }
 
