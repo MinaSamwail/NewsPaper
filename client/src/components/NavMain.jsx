@@ -7,8 +7,14 @@ function NavMain() {
       <NavLink exact to="/">
         Home
       </NavLink>
-      <NavLink exact to="/dashboard"> 
+      <NavLink exact to="/dashboard">
         Dashboard
+      </NavLink>
+      <NavLink exact to="/signup">
+        Sign up
+      </NavLink>
+      <NavLink exact to="/signin">
+        Log in
       </NavLink>
     </nav>
   );
