@@ -49,7 +49,7 @@ class FormSignup extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="lastName">First name</label>
+            <label htmlFor="lastName">Last name</label>
             <input
               type="text"
               name="lastName"
@@ -58,11 +58,11 @@ class FormSignup extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="email">First name</label>
+            <label htmlFor="email">Email</label>
             <input type="email" name="email" className="input" id="email" />
           </div>
           <div className="form-group">
-            <label htmlFor="password">First name</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               name="password"
