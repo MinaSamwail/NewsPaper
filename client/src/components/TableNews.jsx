@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 class TableNews extends Component {
   state = {
     infos: [],
-    selectedInfo: null,
+    // selectedInfo: null,
   };
 
   handleClick(event) {
@@ -29,6 +30,7 @@ class TableNews extends Component {
     return (
       <div>
         <h2>News</h2>
+        <SearchBar />
         {this.state.infos.map((info) => {
           return (
             <div key={info.id}>

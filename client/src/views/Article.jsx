@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+// import axios from "axios";
 
 class Article extends React.Component {
   render() {
@@ -16,7 +16,11 @@ class Article extends React.Component {
           <h2>{extractInformation.title}</h2>
           <p>{extractInformation.description}</p>
           <p>{extractInformation.author}</p>
-          <a href={extractInformation.url} target="_blank">
+          <a
+            href={extractInformation.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Link to the article
           </a>
         </div>
