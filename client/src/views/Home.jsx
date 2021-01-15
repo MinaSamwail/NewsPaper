@@ -6,11 +6,8 @@ import Signup from "./Signup";
 function Home() {
   return (
     <div>
-      {/* <Switch> */}
       <h1>I AM home</h1>
       <TableNews />
-      {/* <Route exact path="/signup" component={Signup} />
-      </Switch> */}
     </div>
   );
 }
