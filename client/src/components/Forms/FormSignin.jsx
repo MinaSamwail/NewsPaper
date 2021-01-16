@@ -27,7 +27,7 @@ class FormSignin extends Component {
   };
   render() {
     // if (this.context.isLoggedIn) {
-    //   return <Redirect to="/" />;   // to do when context is done
+    //   return <Redirect to="/" />; // to do when context is done
     // }
 
     return (

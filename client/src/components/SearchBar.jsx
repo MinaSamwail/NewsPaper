@@ -60,6 +60,7 @@ const SearchBar = (props) => {
         // value=""
         placeholder="Research..."
       />
+      {/* <button >GO</button> */}
     </form>
   );
 };
