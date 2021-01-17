@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import apiHandler from "../api/apiHandler";
+import "../styles/navmain.css";
 
 function NavMain(props) {
   const { context } = props;
@@ -16,7 +17,7 @@ function NavMain(props) {
   }
 
   return (
-    <nav>
+    <nav className="NavMain">
       <NavLink exact to="/">
         <p>Home</p>
       </NavLink>
