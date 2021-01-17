@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import apiHandler from "../api/apiHandler";
+import { withUser } from "../components/Auth/withUser";
 import "../styles/navmain.css";
 
 function NavMain(props) {
@@ -37,4 +38,4 @@ function NavMain(props) {
   );
 }
 
-export default NavMain;
+export default withUser(NavMain);

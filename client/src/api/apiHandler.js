@@ -4,6 +4,7 @@ const service = axios.create({
   baseURL: process.env.REACT_APP_BACKEND_URL + "/newsPaper",
   withCredentials: true,
 });
+
 function errorHandler(error) {
   if (error.response) {
     console.log(error.response.data.message);
@@ -26,8 +27,14 @@ export default {
       .then((res) => res.data)
       .catch(errorHandler);
   },
+  // logout() {
+  //   return service.delete("/auth/logout").catch(errorHandler);
+  // },
   logout() {
-    return service.delete("/auth/logout").catch(errorHandler);
+    return service
+      .get("/api/auth/logout")
+      .then((res) => res.data)
+      .catch(errorHandler);
   },
   isLoggedIn() {
     return service
