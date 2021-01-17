@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import apiHandler from "./../../api/apiHandler";
 import { withRouter } from "react-router-dom";
+import { UserContext } from "../Auth/UserContext";
 import "./../../styles/forms.css";
 
 class FormSignin extends Component {
-  // static contextType = UserContext; //To add when user context is done
+  static contextType = UserContext; //To add when user context is done
 
   state = {
     email: "",
