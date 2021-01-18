@@ -1,5 +1,5 @@
 import React from "react";
-import { UserContext } from "./UserContext";
+import UserContext from "./UserContext";
 
 // This is what we call a HOC (Higher Order Component).
 // It takes a component as a parameter and it returns a component.
@@ -25,7 +25,7 @@ import { UserContext } from "./UserContext";
 // this way :
 // import { withUser } from "../relative/path/to/this/file"
 
-export const withUser = (ComponentToPassUserContextTo) => {
+const withUser = (ComponentToPassUserContextTo) => {
   return function (props) {
     return (
       <UserContext.Consumer>
@@ -36,3 +36,5 @@ export const withUser = (ComponentToPassUserContextTo) => {
     );
   };
 };
+
+export default withUser;
