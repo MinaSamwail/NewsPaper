@@ -20,17 +20,19 @@ class FormSignup extends Component {
     apiHandler
       .signup(this.state)
       .then((data) => {
-        this.context.setUser(data);
+        // console.log("toto");
+        // this.context.setUser(data);
+        this.props.history.push("/");
       })
       .catch((error) => {
         console.log(error);
       });
   };
   render() {
-    if (this.context.isLoggedIn) {
-      //add when apihandler  and usercontext are done
-      return <Redirect to="/" />;
-    }
+    // if (this.context.isLoggedIn) {
+    //   //add when apihandler  and usercontext are done
+    //   return <Redirect to="/" />;
+    // }
     return (
       <section className="form-section">
         <header className="header">
