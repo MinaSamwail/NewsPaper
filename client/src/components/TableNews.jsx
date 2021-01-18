@@ -39,7 +39,7 @@ class TableNews extends Component {
         "https://api.currentsapi.services/v1/latest-news?apiKey=vUAL2v06nYO7IMpRBTeP31MLtxRms900C_Q1CiUo-bWM1st9"
       )
       .then((responseFromApi) => {
-        // console.log("response from api ->", responseFromApi);
+        console.log("response from api ->", responseFromApi);
         this.setState({
           infos: responseFromApi.data.news,
         });

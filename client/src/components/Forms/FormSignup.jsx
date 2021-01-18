@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
+import { UserContext } from "../Auth/UserContext";
+import { withRouter } from "react-router-dom";
 import apiHandler from "./../../api/apiHandler";
 import "./../../styles/forms.css";
 
 class FormSignup extends Component {
-  // static contectType = UserContext; To do when usercontext is done
+  static contectType = UserContext; //To do when usercontext is done
   state = {};
 
   handleChange = (event) => {
@@ -24,9 +26,10 @@ class FormSignup extends Component {
       });
   };
   render() {
-    // if (this.context.isLoggedIn) { //add when apihandler  and usercontext are done
-    //   return <Redirect to="/" />;
-    // }
+    if (this.context.isLoggedIn) {
+      //add when apihandler  and usercontext are done
+      return <Redirect to="/" />;
+    }
     return (
       <section className="form-section">
         <header className="header">
@@ -80,4 +83,4 @@ class FormSignup extends Component {
     );
   }
 }
-export default FormSignup;
+export default withRouter(FormSignup);

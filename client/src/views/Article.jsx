@@ -1,4 +1,5 @@
 import React from "react";
+import ButtonAdd from "../components/ButtonAdd";
 // import axios from "axios";
 
 class Article extends React.Component {
@@ -24,6 +25,7 @@ class Article extends React.Component {
             Link to the article
           </a>
         </div>
+        <ButtonAdd />
       </div>
     );
   }

@@ -1,33 +1,41 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import apiHandler from "./../../api/apiHandler";
+import { withRouter } from "react-router-dom";
+import { UserContext } from "../Auth/UserContext";
 import "./../../styles/forms.css";
 
 class FormSignin extends Component {
-  // static contextType = UserContext; //To add when user context is done
+  static contextType = UserContext; //To add when user context is done
+
   state = {
     email: "",
     password: "",
   };
+
   handleChange = (event) => {
     const value = event.target.value;
     const key = event.target.name;
     this.setState({ [key]: value });
   };
+
   handleSubmit = (event) => {
     event.preventDefault();
+
     apiHandler
       .signin(this.state)
       .then((data) => {
         this.context.setUser(data);
+        this.props.history.push("/");
       })
       .catch((error) => {
         console.log(error);
       });
   };
+
   render() {
-    // if (this.context.isLoggedIn) {
-    //   return <Redirect to="/" />;   // to do when context is done
+    // if (this.context.isLoggedIn) { //this.context.user ?
+    //   return <Redirect to="/" />; // to do when context is done
     // }
 
     return (
@@ -79,4 +87,4 @@ class FormSignin extends Component {
   }
 }
 
-export default FormSignin;
+export default withRouter(FormSignin);
