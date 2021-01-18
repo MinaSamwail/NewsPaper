@@ -30,12 +30,7 @@ export default {
   logout() {
     return service.delete("/auth/logout").catch(errorHandler);
   },
-  // logout() {
-  //   return service
-  //     .get("/api/auth/logout")
-  //     .then((res) => res.data)
-  //     .catch(errorHandler);
-  // },
+
   isLoggedIn() {
     return service
       .get("/auth/isLoggedIn")
