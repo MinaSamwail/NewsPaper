@@ -5,9 +5,9 @@ import apiHandler from "../api/apiHandler";
 
 // Add the logic
 class BtnAdd extends React.Component {
-  state = {
-    infos: [],
-  };
+  // state = {
+  //   infos: [],
+  // };
 
   handleClick = () => {
     console.log("Clicked", this.props.match.params.id);
