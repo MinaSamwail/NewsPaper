@@ -27,18 +27,24 @@ export default {
       .then((res) => res.data)
       .catch(errorHandler);
   },
-  // logout() {
-  //   return service.delete("/auth/logout").catch(errorHandler);
-  // },
   logout() {
-    return service
-      .get("/api/auth/logout")
-      .then((res) => res.data)
-      .catch(errorHandler);
+    return service.delete("/auth/logout").catch(errorHandler);
   },
+  // logout() {
+  //   return service
+  //     .get("/api/auth/logout")
+  //     .then((res) => res.data)
+  //     .catch(errorHandler);
+  // },
   isLoggedIn() {
     return service
       .get("/auth/isLoggedIn")
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+  transferId(articleId) {
+    return service
+      .patch(`/users/article/${articleId}`)
       .then((res) => res.data)
       .catch(errorHandler);
   },
