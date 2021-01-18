@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import apiHandler from "../api/apiHandler";
 import withUser from "../components/Auth/withUser";
-import "../styles/navmain.css";
+import "../styles/NavMain.css";
 
 function NavMain(props) {
   const { context } = props;
@@ -20,7 +20,7 @@ function NavMain(props) {
   return (
     <nav className="NavMain">
       <NavLink exact to="/">
-        <p>Home</p>
+        <h1 className="logo">24h Chrono</h1>
       </NavLink>
       <NavLink exact to="/dashboard">
         <p>Dashboard</p>

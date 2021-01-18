@@ -43,4 +43,10 @@ export default {
       .then((res) => res.data)
       .catch(errorHandler);
   },
+  getArticle(articleId) {
+    return service
+      .post(`/users/dashboard/${articleId}`) // je pense que le chemin n'est pas bon
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
 };
