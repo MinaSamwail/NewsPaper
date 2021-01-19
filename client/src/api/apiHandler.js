@@ -37,15 +37,9 @@ export default {
       .then((res) => res.data)
       .catch(errorHandler);
   },
-  transferId(articleId) {
+  transferArticle(total) {
     return service
-      .patch(`/users/article/${articleId}`)
-      .then((res) => res.data)
-      .catch(errorHandler);
-  },
-  getArticle(articleId) {
-    return service
-      .post(`/users/dashboard/${articleId}`) // je pense que le chemin n'est pas bon
+      .patch(`/users/article`, total)
       .then((res) => res.data)
       .catch(errorHandler);
   },

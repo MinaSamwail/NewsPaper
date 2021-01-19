@@ -10,6 +10,7 @@ class BtnAdd extends React.Component {
   // };
 
   handleClick = () => {
+    // console.log("Clicked here", this.props.match);
     console.log("Clicked", this.props.match.params.id);
     const articleId = this.props.match.params.id;
     apiHandler

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import apiHandler from "../api/apiHandler";
 
 class TableNews extends Component {
   state = {
@@ -13,10 +14,16 @@ class TableNews extends Component {
     // console.log("My info", event);
   }
 
-  // handleChange(event) {
-  //   console.log("calling", event.target);
-  //   this.setState({ searchInfo: event.target.value });
-  // }
+  handleClickBtn = (article) => {
+    apiHandler
+      .transferArticle(article)
+      .then((data) => {
+        console.log(`data:`, data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   handleSearch = (searchValue) => {
     let searchNews = searchValue;
@@ -72,6 +79,9 @@ class TableNews extends Component {
               >
                 <h3 onClick={() => this.handleClick(info)}> {info.title}</h3>
               </Link>
+              <button onClick={() => this.handleClickBtn(info)}>
+                Add this article
+              </button>
             </div>
           );
         })}
