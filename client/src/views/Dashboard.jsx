@@ -1,27 +1,15 @@
-// import React from "react";
-// import apiHandler from "../api/apiHandler";
-
-// const Dashboard = ({ title, description, url, author, image }) => {
-//   return (
-//     <div>
-//       <h1>My dashboard</h1>
-//       <h2>{title}</h2>
-//     </div>
-//   );
-// };
-
-// export default Dashboard;
-
 import React from 'react'
+import apiHandler from '../api/apiHandler'
 
 class Dashboard extends React.Component {
   
 state = {
-  articles : '',
+  articles : [],
 }
 
-componentDidMount(event){
-  console.log(event)
+componentDidMount(){
+  
+// apiHandler.getArticle(data)
 }
 
   render() {

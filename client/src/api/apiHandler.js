@@ -45,7 +45,7 @@ export default {
   },
   getArticle(total) {
     return service
-      .get(`/users/article`, total)
+      .get(`/users/dashboard`, total)
       .then((res) => res.data)
       .catch(errorHandler);
   },
