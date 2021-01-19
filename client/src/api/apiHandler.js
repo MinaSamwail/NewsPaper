@@ -43,4 +43,10 @@ export default {
       .then((res) => res.data)
       .catch(errorHandler);
   },
+  getArticle(total) {
+    return service
+      .get(`/users/article`, total)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
 };

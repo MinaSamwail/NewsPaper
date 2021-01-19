@@ -3,11 +3,11 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import apiHandler from "../api/apiHandler";
 
-// Add the logic
+// // Add the logic
 class BtnAdd extends React.Component {
-  // state = {
-  //   infos: [],
-  // };
+  //   state = {
+  //     info: [],
+  //   };
 
   handleClick = () => {
     // console.log("Clicked here", this.props.match);
@@ -23,9 +23,20 @@ class BtnAdd extends React.Component {
       });
   };
 
+  //   handleClickBtn = (article) => {
+  //     apiHandler
+  //       .transferArticle(article)
+  //       .then((data) => {
+  //         console.log(`data:`, data);
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //       });
+  //   };
+
   render() {
     return (
-      <button onClick={this.handleClick} className="Btn">
+      <button onClick={() => this.handleClickBtn()} className="Btn">
         Add this article
       </button>
     );
