@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import apiHandler from "../api/apiHandler";
 
+import "../styles/tableNews.css";
+
 class TableNews extends Component {
   state = {
     infos: [],
@@ -39,7 +41,6 @@ class TableNews extends Component {
       })
       .catch((error) => console.log(error));
   };
-
   componentDidMount() {
     axios
       .get(
@@ -70,7 +71,15 @@ class TableNews extends Component {
         {this.state.infos.map((info) => {
           return (
             <div key={info.id}>
-              <img src={info.image} alt={info.name} />
+              <img
+                src={info.image}
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src =
+                    "https://cdn.britannica.com/25/93825-050-D1300547/collection-newspapers.jpg";
+                }}
+                alt="Article"
+              />
               <Link
                 to={{
                   pathname: `/article/${info.id}`,

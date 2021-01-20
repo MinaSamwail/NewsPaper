@@ -23,7 +23,15 @@ class Dashboard extends React.Component {
         {this.state.articles.map((article) => {
           return (
             <div>
-              <img src={article.image} atl={article.title} />
+              <img
+                src={article.image}
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src =
+                    "https://cdn.britannica.com/25/93825-050-D1300547/collection-newspapers.jpg";
+                }}
+                alt="Article"
+              />
               <div>
                 <h2>{article.title}</h2>
                 <p>{article.description}</p>
