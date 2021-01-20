@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import apiHandler from "../api/apiHandler";
 import withUser from "../components/Auth/withUser";
-import "../styles/NavMain.css";
+import "../styles/navmain1.css";
 import { withRouter } from "react-router-dom";
 
 const NavMain = (props) => {

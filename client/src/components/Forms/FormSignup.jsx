@@ -22,7 +22,7 @@ class FormSignup extends Component {
       .then((data) => {
         // console.log("toto");
         // this.context.setUser(data);
-        this.props.history.push("/");
+        this.props.history.push("/signin");
       })
       .catch((error) => {
         console.log(error);
