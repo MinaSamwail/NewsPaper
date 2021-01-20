@@ -1,4 +1,4 @@
-.NavMain {
+/* .NavMain {
   position: sticky;
   z-index: 2;
   background-color: transparent;
@@ -17,4 +17,19 @@
   margin: 1.2rem;
   text-shadow: 2px 2px 2px grey;
   z-index: 1;
+} */
+
+.NavMain .logo {
+  font-size: 30px;
+  color: black;
+  text-decoration: none;
+}
+
+.NavMain-Link{
+  display: flex;
+  justify-content: center;
+}
+
+.NavMain-Link a{
+  margin-left: 10px;
 }

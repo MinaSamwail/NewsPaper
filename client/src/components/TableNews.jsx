@@ -27,27 +27,37 @@ class TableNews extends Component {
       });
   };
 
-  handleSearch = (searchValue) => {
-    let searchNews = searchValue;
+  handleChange = (event) => {
+    console.log("ICI", event.target.value);
+    this.setState({
+      searchInfo: event.target.value,
+    });
+  };
+
+  handleSearch = (event) => {
+    event.preventDefault();
+    let searchNews = this.state.searchInfo;
+    console.log("SEARCH", searchNews);
     axios
       .get(
         `https://api.currentsapi.services/v1/search?keywords=${searchNews}&apiKey=vUAL2v06nYO7IMpRBTeP31MLtxRms900C_Q1CiUo-bWM1st9`
       )
       .then((responseFromApi) => {
-        // console.log("response from api ->", responseFromApi);
+        console.log("response from api ->", responseFromApi);
         this.setState({
           infos: responseFromApi.data.news,
+          searchInfo: "",
         });
       })
       .catch((error) => console.log(error));
   };
+
   componentDidMount() {
     axios
       .get(
         "https://api.currentsapi.services/v1/latest-news?apiKey=vUAL2v06nYO7IMpRBTeP31MLtxRms900C_Q1CiUo-bWM1st9"
       )
       .then((responseFromApi) => {
-        // console.log("response from api ->", responseFromApi);
         this.setState({
           infos: responseFromApi.data.news,
         });
@@ -58,14 +68,11 @@ class TableNews extends Component {
     return (
       <div>
         <h2>News</h2>
+
         <SearchBar
-          // handleChange={(event) => this.handleSearch(event.target.value)}
-          handleChange={(event) => {
-            // console.log(event.target.value)
-            this.setState({ searchInfo: event.target.value });
-            console.log(this.state.searchInfo);
-          }}
-          handleSearch={() => this.handleSearch(this.state.searchInfo)}
+          handleChange={this.handleChange}
+          searchInfo={this.state.searchInfo}
+          handleSearch={this.handleSearch}
         />
 
         {this.state.infos.map((info) => {

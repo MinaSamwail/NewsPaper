@@ -6,7 +6,7 @@ import "../styles/navmain1.css";
 import { withRouter } from "react-router-dom";
 
 const NavMain = (props) => {
-  console.log(props);
+  // console.log(props);
   const { context } = props;
 
   const handleLogout = () => {
@@ -25,31 +25,34 @@ const NavMain = (props) => {
       <NavLink exact to="/">
         <h1 className="logo">24h Chrono</h1>
       </NavLink>
-      {context.isLoggedIn && (
-        <React.Fragment>
-          <NavLink exact to="/dashboard">
-            <p>Dashboard</p>
-            {/* {context.user && context.user.firstname} */}
-          </NavLink>
-        </React.Fragment>
-      )}
-      {!context.isLoggedIn && (
-        <React.Fragment>
-          <NavLink exact to="/signup">
-            <p>Sign up</p>
-          </NavLink>
-          <NavLink exact to="/signin">
-            <p>Log in</p>
-          </NavLink>
-        </React.Fragment>
-      )}
-      {context.isLoggedIn && (
-        <React.Fragment>
-          <NavLink exact to="/signin">
-            <p onClick={handleLogout}>Log out</p>
-          </NavLink>
-        </React.Fragment>
-      )}
+
+      <div className="NavMain-Link">
+        {context.isLoggedIn && (
+          <React.Fragment>
+            <NavLink exact to="/dashboard">
+              <p>Dashboard</p>
+              {/* {context.user && context.user.firstname} */}
+            </NavLink>
+          </React.Fragment>
+        )}
+        {!context.isLoggedIn && (
+          <React.Fragment>
+            <NavLink exact to="/signup">
+              <p>Sign up</p>
+            </NavLink>
+            <NavLink exact to="/signin">
+              <p>Log in</p>
+            </NavLink>
+          </React.Fragment>
+        )}
+        {context.isLoggedIn && (
+          <React.Fragment>
+            <NavLink exact to="/signin">
+              <p onClick={handleLogout}>Log out</p>
+            </NavLink>
+          </React.Fragment>
+        )}
+      </div>
     </nav>
   );
 };
