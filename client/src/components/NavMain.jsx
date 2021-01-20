@@ -29,7 +29,7 @@ const NavMain = (props) => {
         <React.Fragment>
           <NavLink exact to="/dashboard">
             <p>Dashboard</p>
-            {context.user && context.user.firstname}
+            {/* {context.user && context.user.firstname} */}
           </NavLink>
         </React.Fragment>
       )}

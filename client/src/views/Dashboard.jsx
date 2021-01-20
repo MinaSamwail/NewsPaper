@@ -10,6 +10,7 @@ class Dashboard extends React.Component {
   };
 
   componentDidMount() {
+    console.log("JE SUIS LA");
     apiHandler.getArticle().then((data) => {
       console.log("DATA", data);
       this.setState({ articles: data });

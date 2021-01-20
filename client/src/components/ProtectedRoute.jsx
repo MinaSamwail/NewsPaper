@@ -13,7 +13,7 @@ function ProtectedRoute({ component: Component, render, ...rest }) {
           return (
             <React.Fragment>
               {render && <Route {...rest} render={render} />}
-              {render && <Route {...rest} component={Component} />}
+              {!render && <Route {...rest} component={Component} />}
             </React.Fragment>
           );
         } else {
