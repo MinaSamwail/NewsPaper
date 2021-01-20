@@ -6,6 +6,7 @@ import Dashboard from "./views/Dashboard";
 import Article from "./views/Article";
 import Signup from "./views/Signup";
 import Signin from "./views/Signin";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <NavMain />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/dashboard" component={Dashboard} />
+        <ProtectedRoute exact path="/dashboard" component={Dashboard} />
         <Route exact path="/article/:id" component={Article} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/signin" component={Signin} />

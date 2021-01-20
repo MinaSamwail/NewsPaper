@@ -25,7 +25,7 @@ class FormSignin extends Component {
     apiHandler
       .signin(this.state)
       .then((data) => {
-        // this.context.setUser(data);
+        this.context.setUser(data);
         this.props.history.push("/");
       })
       .catch((error) => {
@@ -34,7 +34,8 @@ class FormSignin extends Component {
   };
 
   render() {
-    // if (this.context.isLoggedIn) { //this.context.user ?
+    // if (this.context.isLoggedIn) {
+    //   //this.context.user ?
     //   return <Redirect to="/" />; // to do when context is done
     // }
 
