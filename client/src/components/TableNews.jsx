@@ -10,6 +10,28 @@ class TableNews extends Component {
   state = {
     infos: [],
     searchInfo: "",
+    selectValue: "",
+  };
+
+  handleSelect = (e) => {
+    console.log("selected", e.target.value);
+    this.setState({
+      selectValue: e.target.value,
+    });
+    e.preventDefault();
+    // let valueSelected = this.state.selectValue;
+    console.log("SELECTION", e.target.value);
+    axios
+      .get(
+        `https://api.currentsapi.services/v1/search?language=${e.target.value}&apiKey=vUAL2v06nYO7IMpRBTeP31MLtxRms900C_Q1CiUo-bWM1st9`
+      )
+      .then((responseFromApi) => {
+        console.log("response from api", responseFromApi);
+        this.setState({
+          infos: responseFromApi.data.news,
+        });
+      })
+      .catch((error) => console.log(error));
   };
 
   handleClick(event) {
@@ -67,8 +89,34 @@ class TableNews extends Component {
   render() {
     return (
       <div>
-        <h2>News</h2>
+        <h2>Latest News</h2>
+        <div>
+          <label htmlFor="select-lang">Chose your language</label>
+          <select
+            name="language"
+            // onSelect={this.handleSelect}
+            onChange={this.handleSelect}
+            id="select-lang"
+          >
+            <option value="">-- Select a language --</option>
 
+            <option value="ar">Arabic</option>
+            <option value="zh">Chinese</option>
+            <option value="nl">Dutch</option>
+            <option value="en">English</option>
+            <option value="fi">Finnish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="hi">Hindi</option>
+            <option value="it">Italian</option>
+            <option value="ja">Japanese</option>
+            <option value="ko">Korean</option>
+            <option value="msa">Malay</option>
+            <option value="pt">Portuguese</option>
+            <option value="ru">Russian</option>
+            <option value="es">Spanish</option>
+          </select>
+        </div>
         <SearchBar
           handleChange={this.handleChange}
           searchInfo={this.state.searchInfo}
