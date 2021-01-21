@@ -1,35 +1,22 @@
-/* .NavMain {
+.NavMain{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   position: sticky;
   z-index: 2;
-  background-color: transparent;
+  background-color: black;
   left: 0;
   right: 0;
   top: 0;
-  color: rgb(57, 57, 57);
-  display: flex;
-  align-items: center;
-  padding: 20px 40px;
+  /* justify-content: center; */
 }
 
-.NavMain .logo {
-  font-size: 2.2rem;
-  font-weight: 600;
-  margin: 1.2rem;
-  text-shadow: 2px 2px 2px grey;
-  z-index: 1;
+/* .NavMain .logo{
+  font-size: 30px;
 } */
 
-.NavMain .logo {
-  font-size: 30px;
-  color: black;
+.NavMain a{
+  color: white;
   text-decoration: none;
 }
 
-.NavMain-Link{
-  display: flex;
-  justify-content: center;
-}
-
-.NavMain-Link a{
-  margin-left: 10px;
-}
