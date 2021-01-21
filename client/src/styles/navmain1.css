@@ -1,4 +1,4 @@
-.NavMain{
+.NavMain {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -15,8 +15,7 @@
   font-size: 30px;
 } */
 
-.NavMain a{
+.NavMain a {
   color: white;
   text-decoration: none;
 }
-

@@ -90,8 +90,10 @@ class TableNews extends Component {
     return (
       <div>
         <h2>Latest News</h2>
-        <div>
-          <label htmlFor="select-lang">Chose your language</label>
+        <div className="select-drop">
+          <label className="drop-label" htmlFor="select-lang">
+            Chose your language
+          </label>
           <select
             name="language"
             // onSelect={this.handleSelect}
@@ -125,7 +127,7 @@ class TableNews extends Component {
 
         {this.state.infos.map((info) => {
           return (
-            <div key={info.id}>
+            <div className="div-by-div" key={info.id}>
               <img
                 src={info.image}
                 onError={(e) => {
@@ -143,12 +145,16 @@ class TableNews extends Component {
               >
                 <h3 onClick={() => this.handleClick(info)}> {info.title}</h3>
               </Link>
-              <button onClick={() => this.handleClickBtn(info)}>
+              <button
+                className="btn-add"
+                onClick={() => this.handleClickBtn(info)}
+              >
                 Add this article
               </button>
             </div>
           );
         })}
+        <footer className="footer"></footer>
       </div>
     );
   }
