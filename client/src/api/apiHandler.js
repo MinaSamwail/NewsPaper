@@ -45,7 +45,13 @@ export default {
   },
   getArticle() {
     return service
-      .get(`/users/dashboard`) // ici
+      .get(`/users/dashboard`)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+  deleteArticle(id) {
+    return service
+      .patch(`/users/dashboard`, { articleId: id }) // ici
       .then((res) => res.data)
       .catch(errorHandler);
   },

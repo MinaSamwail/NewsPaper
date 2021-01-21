@@ -10,12 +10,24 @@ class Dashboard extends React.Component {
   };
 
   componentDidMount() {
-    console.log("JE SUIS LA");
+    // console.log("JE SUIS LA");
     apiHandler.getArticle().then((data) => {
       console.log("DATA", data);
       this.setState({ articles: data });
     });
   }
+
+  handleClick = (id) => {
+    console.log("ARTICLE", id);
+    apiHandler
+      .deleteArticle(id)
+      .then((data) => {
+        console.log("data", data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   render() {
     return (
@@ -40,7 +52,9 @@ class Dashboard extends React.Component {
                 <a href={article.url} target="_blank" rel="noopener noreferrer">
                   link of the article
                 </a>
-                <button>DELETE</button>
+                <button onClick={() => this.handleClick(article.id)}>
+                  DELETE
+                </button>
               </div>
             </div>
           );
